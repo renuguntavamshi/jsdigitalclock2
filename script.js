@@ -25,7 +25,8 @@ function settime(){
   document.querySelector("#settinglunchtime").innerText=lunchtime.options[lunchtime.selectedIndex].text;
    document.querySelector("#settingnaptime").innerText=naptime.options[naptime.selectedIndex].text;
   document.querySelector("#settingnighttime").innerText=sleeptime.options[sleeptime.selectedIndex].text;
-let wake=wakingtime.value;
+let mainimage=document.querySelector("#mainimage");
+  let wake=wakingtime.value;
 let lunch=lunchtime.value;
 let nap=naptime.value;
 let sleep=sleeptime.value;
@@ -37,22 +38,23 @@ let sleep=sleeptime.value;
     if(hours===parseInt(wakingtime.value)){
         document.querySelector("#greeting1").innerText="Good Morning!Start the day feshly";
         document.querySelector("#greeting2").innerText="Grab some Healthy Breakfast";
-        img.src='nap_time.svg'
+        mainimage.src='morning.png'
     }
 else  if(hours===parseInt(lunch)){
         document.querySelector("#greeting1").innerText="Good Afternoon Dear";
         document.querySelector("#greeting2").innerText="Keep Working Hard";
-
+        mainimage.src="./lunch.jpg"
     }
     else if(hours===parseInt(nap)){
         document.querySelector("#greeting1").innerText="Good Evening!Have some Tea or Snacks";
         document.querySelector("#greeting2").innerText="Take a few minutes break and come back to your work again";
-
+        mainimage.src="./tea.jpg"
     }
     else if(hours===parseInt(sleep)){
         document.querySelector("#greeting1").innerText="Good Night";
         document.querySelector("#greeting2").innerText="Turn off your lights and sleep";
-           }    
+        mainimage.src="./sleep.jpg"
+    }    
 //     console.log(hours);
 //     console.log(lunch.value);
 }
